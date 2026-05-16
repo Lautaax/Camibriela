@@ -12,11 +12,11 @@ export default function About() {
         >
           <div className="aspect-square rounded-[40px] overflow-hidden glass-card relative z-10 p-1">
              <div className="w-full h-full rounded-[38px] overflow-hidden bg-gradient-to-br from-brand-purple/20 to-brand-vibrant/40 flex items-center justify-center">
-                <span className="text-9xl font-display font-black text-white/10 select-none">SPM</span>
+                <span className="text-9xl font-display font-black text-white/10 select-none">CB</span>
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
                 <div className="relative z-20 text-center p-8">
-                  <p className="text-2xl font-display italic text-brand-purple mb-4">"Tu éxito es el nuestro"</p>
-                  <p className="text-white/60">Somos expertos en transformar marcas a través de la creatividad y la estrategia digital.</p>
+                  <p className="text-2xl font-display italic text-brand-purple mb-4">"Tu marca, mi visión"</p>
+                  <p className="text-white/60 text-base">Guiamos a marcas y creadores hacia su versión más auténtica y rentable.</p>
                 </div>
              </div>
           </div>
@@ -31,7 +31,7 @@ export default function About() {
             viewport={{ once: true }}
             className="text-brand-purple font-display font-medium uppercase tracking-[0.2em] mb-4"
           >
-            Sobre Nosotros
+            Nuestra Fundadora
           </motion.p>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export default function About() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-display font-bold mb-8"
           >
-            Más que una agencia, <br /> somos tus aliados.
+            Camila Briela: <br /> <span className="text-white/20">Estrategia con propósito.</span>
           </motion.h2>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -50,10 +50,10 @@ export default function About() {
             className="space-y-6 text-white/60 text-lg leading-relaxed"
           >
             <p>
-              En <span className="text-white font-bold">Somos parte de tu marca!</span> entendemos que cada proyecto es único. No solo gestionamos canales; nos sumergimos en la esencia de tu negocio para comunicar con propósito.
+              Bajo la dirección de <span className="text-white font-bold">Camila Briela</span>, nuestra agencia nace de la necesidad de elevar el estándar del contenido digital. No creemos en fórmulas genéricas, sino en la curaduría estratégica que conecta con audiencias reales.
             </p>
             <p>
-              Nuestro equipo combina estrategia de marketing con ejecución creativa de alto nivel para asegurar que tu marca no solo sea vista, sino que sea recordada y elegida.
+              Fusionamos estética visual de alto nivel con análisis de datos para asegurar que cada acción tenga un impacto directo en el crecimiento y la autoridad de tu marca en el mercado global.
             </p>
             <div className="grid grid-cols-2 gap-8 pt-4">
               <div>

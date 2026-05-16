@@ -5,41 +5,88 @@ import { ExternalLink, X, ChevronRight } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: "EcoFashion Brand",
-    category: "Gestión de Redes & Contenido",
-    description: "Desarrollamos una estrategia integral de contenido enfocada en la sostenibilidad, logrando un crecimiento orgánico del 40% en 3 meses y una identidad visual coherente y aspiracional.",
-    image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=800",
-    tags: ["Storytelling", "Instagram Growth", "Sustainability"],
-    website: "https://example.com"
+    title: "Personal Brand: Camila B.",
+    category: "Branding & Social Strategy",
+    description: "Redefinimos la identidad digital de Camila Briela, enfocándonos en un storytelling auténtico y una estética minimalista-lujosa. El resultado fue un incremento del 65% en el engagement orgánico durante el primer trimestre.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800",
+    tags: ["Personal Branding", "Strategy", "Aesthetic"],
+    website: "https://instagram.com/camilabriela",
+    metrics: { growth: "+65%", reach: "1.2M" }
   },
   {
     id: 2,
-    title: "Tech Startup",
-    category: "Estrategia Digital & Ads",
-    description: "Lanzamiento de marca disruptiva en el sector IT. Implementamos campañas de captación de leads en LinkedIn y Google Ads con un ROI superior al 300%.",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
-    tags: ["Lead Gen", "Performance", "IT Sector"],
-    website: "https://example.com"
+    title: "Urban Fashion Editorial",
+    category: "Content Production",
+    description: "Producción integral de sesiones fotográficas y video para campañas de moda urbana. Logramos posicionar las piezas de contenido en la sección 'Explora' de Instagram de forma recurrente.",
+    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800",
+    tags: ["Photography", "Fashion", "Art Direction"],
+    website: "https://instagram.com/camilabriela",
+    metrics: { growth: "+140%", reach: "850k" }
   },
   {
     id: 3,
-    title: "Gourmet Restaurant",
-    category: "Diseño Web & Branding",
-    description: "Rediseño de identidad visual y desarrollo de landing page con sistema de reservas integrado. La experiencia de usuario mejoró significativamente el tiempo de permanencia en el sitio.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=800",
-    tags: ["UX/UI", "Restaurant Culture", "Local SEO"],
-    website: "https://example.com"
+    title: "Lifestyle Curator",
+    category: "Influencer Management",
+    description: "Gestión estratégica de alianzas con marcas premium de lifestyle. Curaduría de contenido que mantiene la esencia personal mientras integra productos de forma nativa y efectiva.",
+    image: "https://images.unsplash.com/photo-1496449903678-68ddcb189a24?auto=format&fit=crop&q=80&w=800",
+    tags: ["Partnerships", "Lifestyle", "Content Creation"],
+    website: "https://instagram.com/camilabriela",
+    metrics: { growth: "x3 ROI", reach: "2.4M" }
   },
   {
     id: 4,
-    title: "Fitness Coach",
-    category: "Personal Branding",
-    description: "Posicionamiento de marca personal a través de TikTok y Reels. Creación de infoproductos y automatización de embudos de venta.",
-    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800",
-    tags: ["Content Strategy", "Video Marketing", "Passive Income"],
-    website: "https://example.com"
+    title: "Reels Viral Strategy",
+    category: "Video Marketing",
+    description: "Desarrollo de guiones y edición dinámica para Reels altamente compartibles. Logramos hitos de visualizaciones que superaron los 5 millones, expandiendo el alcance global del perfil.",
+    image: "https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&q=80&w=800",
+    tags: ["Virality", "Video Editing", "IG Reels"],
+    website: "https://instagram.com/camilabriela",
+    metrics: { growth: "+5M Views", reach: "3.2M" }
   }
 ];
+
+function ProjectCard({ project, index, onSelect }: { project: any, index: number, onSelect: (id: number) => void }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <motion.div
+      layoutId={project.id.toString()}
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      onClick={() => onSelect(project.id)}
+      className="group relative h-[400px] overflow-hidden rounded-[40px] cursor-pointer bg-white/5"
+    >
+      <AnimatePresence>
+        {!isLoaded && (
+          <motion.div 
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent bg-[length:200%_100%] animate-[shimmer_1.5s_infinite]" 
+          />
+        )}
+      </AnimatePresence>
+      
+      <img 
+        src={project.image} 
+        alt={project.title}
+        onLoad={() => setIsLoaded(true)}
+        className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-110 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+      
+      <div className="absolute bottom-10 left-10 right-10">
+        <p className="text-brand-purple text-xs uppercase tracking-widest font-bold mb-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+          {project.category}
+        </p>
+        <h3 className="text-3xl font-display font-bold transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">
+          {project.title}
+        </h3>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Portfolio() {
   const [selectedId, setSelectedId] = useState<number | null>(null);
@@ -71,31 +118,7 @@ export default function Portfolio() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              onClick={() => setSelectedId(project.id)}
-              className="group relative h-[400px] overflow-hidden rounded-[40px] cursor-pointer"
-            >
-              <img 
-                src={project.image} 
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-              
-              <div className="absolute bottom-10 left-10 right-10">
-                <p className="text-brand-purple text-xs uppercase tracking-widest font-bold mb-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  {project.category}
-                </p>
-                <h3 className="text-3xl font-display font-bold transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">
-                  {project.title}
-                </h3>
-              </div>
-            </motion.div>
+            <ProjectCard key={project.id} project={project} index={index} onSelect={setSelectedId} />
           ))}
         </div>
       </div>
@@ -103,21 +126,18 @@ export default function Portfolio() {
       {/* Modal / Detailed View */}
       <AnimatePresence>
         {selectedId && selectedProject && (
-          <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-10">
+          <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-10 overflow-hidden">
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedId(null)}
-              className="absolute inset-0 bg-black/90 backdrop-blur-xl"
+              className="absolute inset-0 bg-black/95 backdrop-blur-xl cursor-zoom-out"
             />
             
             <motion.div 
               layoutId={selectedId.toString()}
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 50, scale: 0.9 }}
-              className="relative w-full max-w-5xl bg-dark-surface rounded-[40px] overflow-hidden border border-white/10 flex flex-col md:flex-row shadow-2xl"
+              className="relative w-full max-w-5xl bg-dark-surface rounded-[40px] overflow-y-auto max-h-[90vh] border border-white/10 flex flex-col md:flex-row shadow-2xl no-scrollbar"
             >
               <button 
                 onClick={() => setSelectedId(null)}
@@ -145,6 +165,17 @@ export default function Portfolio() {
                 <p className="text-white/60 text-lg leading-relaxed mb-8">
                   {selectedProject.description}
                 </p>
+
+                <div className="flex flex-wrap gap-4 mb-4">
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex-1 min-w-[120px]">
+                     <p className="text-[10px] uppercase font-bold text-brand-purple">Métrica Clave</p>
+                     <p className="text-xl font-bold">{selectedProject.metrics?.growth || '+120%'}</p>
+                  </div>
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex-1 min-w-[120px]">
+                     <p className="text-[10px] uppercase font-bold text-brand-purple">Alcance</p>
+                     <p className="text-xl font-bold">{selectedProject.metrics?.reach || '500k+'}</p>
+                  </div>
+                </div>
 
                 <div className="flex flex-wrap gap-2 mb-10">
                   {selectedProject.tags.map(tag => (

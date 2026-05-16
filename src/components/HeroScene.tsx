@@ -10,6 +10,12 @@ function AnimatedSphere() {
     if (meshRef.current) {
       meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.2;
       meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.3;
+      
+      // Mouse interaction
+      const targetX = state.mouse.x * 0.5;
+      const targetY = state.mouse.y * 0.5;
+      meshRef.current.position.x = THREE.MathUtils.lerp(meshRef.current.position.x, targetX, 0.1);
+      meshRef.current.position.y = THREE.MathUtils.lerp(meshRef.current.position.y, targetY, 0.1);
     }
   });
 

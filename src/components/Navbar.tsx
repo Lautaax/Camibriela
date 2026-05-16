@@ -26,10 +26,10 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-brand-purple rounded-full flex items-center justify-center relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-vibrant to-white/20 group-hover:rotate-45 transition-transform duration-500" />
-            <span className="font-display font-bold text-xl relative z-10">S</span>
+            <span className="font-display font-bold text-xl relative z-10">C</span>
           </div>
           <span className="font-display font-bold text-lg tracking-tight hidden sm:block">
-            Somos parte de tu marca!
+            Camila Briela Agency
           </span>
         </div>
 
