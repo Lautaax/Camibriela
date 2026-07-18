@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import SEO from '../components/SEO';
 
 export default function Privacy() {
   return (
@@ -8,6 +9,10 @@ export default function Privacy() {
       exit={{ opacity: 0 }}
       className="pt-32 pb-24 px-6 max-w-4xl mx-auto"
     >
+      <SEO 
+        title="Política de Privacidad" 
+        description="Leé las políticas de privacidad y términos de protección de datos de Camila Briela Agency. Tu privacidad es nuestra prioridad absoluta."
+      />
       <div className="text-center mb-16">
         <p className="text-brand-purple font-display font-medium uppercase tracking-[0.2em] mb-3">
           Legales

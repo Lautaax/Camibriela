@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import SEO from '../components/SEO';
 
 export default function Terms() {
   return (
@@ -8,6 +9,10 @@ export default function Terms() {
       exit={{ opacity: 0 }}
       className="pt-32 pb-24 px-6 max-w-4xl mx-auto"
     >
+      <SEO 
+        title="Términos y Condiciones" 
+        description="Leé los Términos y Condiciones oficiales de Camila Briela Agency que rigen el uso de este sitio web y de nuestros servicios de marketing."
+      />
       <div className="text-center mb-16">
         <p className="text-brand-purple font-display font-medium uppercase tracking-[0.2em] mb-3">
           Legales
