@@ -45,7 +45,7 @@ export default function HeroScene() {
     const colors = [
       'rgba(168, 85, 247, 0.15)', // Purple
       'rgba(139, 92, 246, 0.12)', // Vibrant
-      'rgba(236, 72, 153, 0.08)',  // Pink
+      'rgba(124, 58, 237, 0.10)',  // Deep Violet
     ];
 
     for (let i = 0; i < particleCount; i++) {

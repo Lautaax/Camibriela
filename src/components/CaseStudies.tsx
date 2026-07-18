@@ -59,9 +59,9 @@ export default function CaseStudies() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-display font-black mb-6"
+            className="text-5xl md:text-7xl font-display font-black mb-6 text-adaptive-primary"
           >
-            Data que impulsa <br /> <span className="text-white/20">tu crecimiento.</span>
+            Data que impulsa <br /> <span className="text-adaptive-muted/40">tu crecimiento.</span>
           </motion.h2>
         </div>
 
@@ -75,13 +75,13 @@ export default function CaseStudies() {
           >
             <div className="flex items-center justify-between mb-8">
               <div>
-                <h3 className="text-2xl font-bold mb-2">Crecimiento de Alcance</h3>
-                <p className="text-white/40 text-sm">Promedio trimestral de cuentas gestionadas</p>
+                <h3 className="text-2xl font-bold mb-2 text-adaptive-primary">Crecimiento de Alcance</h3>
+                <p className="text-adaptive-muted text-sm">Promedio trimestral de cuentas gestionadas</p>
               </div>
               <div className="flex gap-4">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-brand-purple" />
-                  <span className="text-[10px] uppercase font-bold text-white/40">Alcance</span>
+                  <span className="text-[10px] uppercase font-bold text-adaptive-muted">Alcance</span>
                 </div>
               </div>
             </div>
@@ -143,8 +143,8 @@ export default function CaseStudies() {
                     <stat.icon className={`w-6 h-6 ${stat.color}`} />
                   </div>
                   <div>
-                    <p className="text-white/40 text-xs font-bold uppercase tracking-widest">{stat.label}</p>
-                    <p className="text-2xl font-display font-bold leading-tight">{stat.metric}</p>
+                    <p className="text-adaptive-muted text-xs font-bold uppercase tracking-widest">{stat.label}</p>
+                    <p className="text-2xl font-display font-bold leading-tight text-adaptive-primary">{stat.metric}</p>
                   </div>
                 </div>
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity">
@@ -194,14 +194,14 @@ export default function CaseStudies() {
                   <TrendingUp className="w-6 h-6 text-orange-500" />
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-white/40">Métrica Destacada</p>
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-adaptive-muted">Métrica Destacada</p>
                   <p className="text-sm font-bold text-orange-400">Tasa de Conversión</p>
                 </div>
               </div>
 
               <div className="flex flex-col mb-4">
                 <div className="flex items-center gap-3 mb-1">
-                  <span className="text-white/20 text-xl font-display font-black line-through">1.2%</span>
+                  <span className="text-adaptive-muted/40 text-xl font-display font-black line-through">1.2%</span>
                   <span className="text-orange-500 text-sm font-bold">Base</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -213,8 +213,8 @@ export default function CaseStudies() {
                   />
                 </div>
               </div>
-              <p className="text-sm text-white/60 leading-relaxed max-w-[200px]">
-                Optimización de embudos y <span className="text-white font-bold">copywriting persuasivo</span> de alto impacto.
+              <p className="text-sm text-adaptive-muted leading-relaxed max-w-[200px]">
+                Optimización de embudos y <span className="text-adaptive-primary font-bold">copywriting persuasivo</span> de alto impacto.
               </p>
               
               {/* Background accent */}
@@ -225,11 +225,11 @@ export default function CaseStudies() {
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
-             className="glass-card p-8 rounded-[40px] border-white/5 flex flex-col justify-center items-center text-center bg-white text-black"
+             className="glass-card p-8 rounded-[40px] border-white/5 flex flex-col justify-center items-center text-center bg-gradient-to-br from-brand-purple/10 to-transparent hover:border-brand-purple/30 transition-colors text-adaptive-primary"
            >
-              <div className="text-5xl font-display font-black mb-2">+10M</div>
-              <p className="text-sm uppercase tracking-widest font-bold opacity-40">Views Totales</p>
-              <p className="text-xs opacity-30 mt-4">Generadas para nuestros clientes en 2024</p>
+              <div className="text-5xl font-display font-black mb-2 text-brand-purple drop-shadow-[0_0_15px_rgba(168,85,247,0.2)]">+10M</div>
+              <p className="text-sm uppercase tracking-widest font-bold text-adaptive-primary/75">Views Totales</p>
+              <p className="text-xs text-adaptive-muted mt-4">Generadas para nuestros clientes en 2024</p>
            </motion.div>
         </div>
       </div>
