@@ -132,27 +132,7 @@ export default function HeroScene() {
         ctx.fill();
       });
 
-      // Draw subtle modern geometric grid lines connected to mouse
-      if (mouse.active) {
-        ctx.strokeStyle = 'rgba(168, 85, 247, 0.025)';
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        for (let x = 0; x < rect.width; x += 80) {
-          const dist = Math.abs(x - mouse.x);
-          if (dist < 250) {
-            ctx.moveTo(x, 0);
-            ctx.lineTo(x, rect.height);
-          }
-        }
-        for (let y = 0; y < rect.height; y += 80) {
-          const dist = Math.abs(y - mouse.y);
-          if (dist < 250) {
-            ctx.moveTo(0, y);
-            ctx.lineTo(rect.width, y);
-          }
-        }
-        ctx.stroke();
-      }
+      // Render loop ends without drawing grid lines
 
       animationFrameId = requestAnimationFrame(render);
     };
