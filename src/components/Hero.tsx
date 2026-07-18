@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 import HeroScene from './HeroScene';
 
@@ -62,16 +63,18 @@ export default function Hero() {
         >
           <a 
             href="https://wa.me/542915207457"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-brand-purple to-brand-vibrant rounded-full font-bold text-lg hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] transition-all transform hover:-translate-y-1"
           >
             ¿Charlamos?
           </a>
-          <a 
-            href="#servicios"
-            className="w-full sm:w-auto px-10 py-5 border border-white/20 rounded-full font-bold text-lg hover:bg-white/5 transition-all"
+          <Link 
+            to="/portfolio"
+            className="w-full sm:w-auto px-10 py-5 border border-white/20 rounded-full font-bold text-lg hover:bg-white/5 transition-all text-center"
           >
-            Nuestros Servicios
-          </a>
+            Ver Portfolio
+          </Link>
         </motion.div>
       </div>
 

@@ -3,44 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Partners from './components/Partners';
-import Services from './components/Services';
-import Process from './components/Process';
-import Portfolio from './components/Portfolio';
-import AgencyPulse from './components/AgencyPulse';
-import CaseStudies from './components/CaseStudies';
-import About from './components/About';
-import FAQ from './components/FAQ';
-import Testimonials from './components/Testimonials';
-import Team from './components/Team';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import CustomCursor from './components/CustomCursor';
+import ScrollToTop from './components/ScrollToTop';
+
+import Home from './pages/Home';
+import Work from './pages/Work';
+import AboutPage from './pages/About';
+import ContactPage from './pages/Contact';
 
 export default function App() {
   return (
-    <div className="min-h-screen relative">
-      <CustomCursor />
-      <Navbar />
-      <main>
-        <Hero />
-        <Partners />
-        <Services />
-        <Process />
-        <Portfolio />
-        <CaseStudies />
-        <AgencyPulse />
-        <About />
-        <Testimonials />
-        <Team />
-        <FAQ />
-        <Contact />
-      </main>
-      <Footer />
-      <WhatsAppButton />
-    </div>
+    <Router>
+      <div className="min-h-screen relative bg-dark-bg text-white">
+        <ScrollToTop />
+        <CustomCursor />
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/portfolio" element={<Work />} />
+            <Route path="/nosotros" element={<AboutPage />} />
+            <Route path="/contacto" element={<ContactPage />} />
+          </Routes>
+        </main>
+        <Footer />
+        <WhatsAppButton />
+      </div>
+    </Router>
   );
 }

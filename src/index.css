@@ -1,20 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+:root {
+  --bg-primary: #030206;
+  --bg-surface: #0e0d12;
+  --text-primary: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  
+  --nav-bg: rgba(0, 0, 0, 0.6);
+  --nav-border: rgba(255, 255, 255, 0.1);
+  --button-text: #000000;
+  --button-bg: #ffffff;
+  --mobile-menu-bg: rgba(0, 0, 0, 0.95);
+}
+
+.light {
+  --bg-primary: #f6f5f9;
+  --bg-surface: #ffffff;
+  --text-primary: #0f0a1c;
+  --text-muted: rgba(15, 10, 28, 0.65);
+  --border-color: rgba(168, 85, 247, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  
+  --nav-bg: rgba(255, 255, 255, 0.7);
+  --nav-border: rgba(168, 85, 247, 0.15);
+  --button-text: #ffffff;
+  --button-bg: #A855F7;
+  --mobile-menu-bg: rgba(255, 255, 255, 0.95);
+}
+
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", sans-serif;
   
   --color-brand-purple: #A855F7;
   --color-brand-vibrant: #8B5CF6;
-  --color-dark-bg: #000000;
-  --color-dark-surface: #0A0A0A;
+  --color-dark-bg: var(--bg-primary);
+  --color-dark-surface: var(--bg-surface);
 }
 
 @layer base {
   body {
-    @apply bg-dark-bg text-white font-sans antialiased;
+    background-color: var(--color-dark-bg);
+    color: var(--text-primary);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    @apply font-sans antialiased;
   }
+}
+
+.text-adaptive-primary {
+  color: var(--text-primary);
+}
+
+.text-adaptive-muted {
+  color: var(--text-muted);
 }
 
 .purple-glow {
@@ -29,7 +70,10 @@
 }
 
 .glass-card {
-  @apply bg-white/5 backdrop-blur-md border border-white/10;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.5s ease, border-color 0.5s ease, shadow 0.5s ease;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -39,3 +83,4 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
