@@ -13,32 +13,32 @@ const data = [
 
 const stats = [
   {
-    client: "Camila Briela",
-    metric: "+500K",
-    label: "Comunidad Unificada",
-    icon: Users,
-    color: "text-blue-400"
-  },
-  {
-    client: "Editorial Mode",
-    metric: "3.2M",
-    label: "Views en Reels",
+    client: "Fiesta de la Confluencia",
+    metric: "5.2M",
+    label: "Views Cobertura Neuquén",
     icon: Play,
     color: "text-purple-400"
   },
   {
-    client: "Lifestyle",
-    metric: "890K",
-    label: "Impresiones Mensuales",
+    client: "Lucciano's",
+    metric: "4.5M",
+    label: "Views & Alcance Nacional",
     icon: Eye,
     color: "text-pink-400"
   },
   {
-    client: "Brand Loyalty",
-    metric: "x4",
-    label: "Interacción vs Media",
+    client: "Big Six & Tampicos (B. Blanca)",
+    metric: "+250%",
+    label: "Crecimiento en Pedidos",
     icon: TrendingUp,
     color: "text-orange-400"
+  },
+  {
+    client: "ByFy App & Recitales",
+    metric: "+350%",
+    label: "Descargas y Engagement",
+    icon: Users,
+    color: "text-blue-400"
   }
 ];
 

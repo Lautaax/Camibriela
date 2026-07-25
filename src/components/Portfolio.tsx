@@ -4,113 +4,123 @@ import { ExternalLink, X, ChevronRight } from 'lucide-react';
 
 const projects = [
   {
-    id: 6,
-    title: "Estrategia Viral: @camilabriela",
-    category: "Viral Storytelling",
-    description: "Desarrollo y ejecución de un formato viral de alta retención. Optimizamos el alcance orgánico mediante el uso de ganchos (hooks) visuales y auditivos de tendencia y edición cinematográfica de alto impacto. El post superó las expectativas del algoritmo alcanzando millones de cuentas no seguidoras de forma 100% orgánica.",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=800",
-    tags: ["Viral Post", "Algorithm Strategy", "High Engagement"],
-    website: "https://www.instagram.com/p/DVwwDTyEfPI/?igsh=aDEwMGF4ZGJsNHh6",
-    metrics: { growth: "+210% Guardados", reach: "1.8M Views" },
+    id: 101,
+    title: "Lucciano's Il Gelato",
+    category: "Branding & High-Impact Content",
+    description: "Estrategia de contenido visual, Reels virales y campañas estéticas de alto valor para Lucciano's, la prestigiosa cadena de helados artesanales de Argentina. Potenciamos la experiencia visual de sus icónicos 'Pops' y aperturas de tiendas temáticas, elevando el alcance orgánico a millones de clientes.",
+    image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&q=80&w=800",
+    tags: ["Lucciano's", "Heladería Argentina", "Content Creation", "Reels Virales"],
+    website: "https://www.luccianos.net",
+    metrics: { growth: "+180% Engagement", reach: "4.5M Views" },
     imageCarousel: [
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1529139513055-07f909ef3d5c?auto=format&fit=crop&q=80&w=800"
+      "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&q=80&w=800"
     ],
     testimonial: {
-      text: "El método de narrativa de este post específico generó un pico masivo de nuevos seguidores altamente fidelizados e interesados en nuestros servicios.",
-      author: "Camila Briela Agency",
-      role: "Internal Case"
+      text: "La calidad visual de la producción de contenidos elevó nuestras campañas a un nivel internacional sensacional.",
+      author: "Lucciano's Argentina",
+      role: "Heladería Artesanal"
     }
   },
   {
-    id: 1,
-    title: "Personal Brand: Camila B.",
-    category: "Branding & Social Strategy",
-    description: "Redefinimos la identidad digital de Camila Briela, enfocándonos en un storytelling auténtico y una estética minimalista-lujosa. El resultado fue un incremento del 65% en el engagement orgánico durante el primer trimestre.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800",
-    tags: ["Personal Branding", "Strategy", "Aesthetic"],
-    website: "https://instagram.com/camilabriela",
-    metrics: { growth: "+65%", reach: "1.2M" },
+    id: 102,
+    title: "Big Six (Bahía Blanca)",
+    category: "Social Media & Community Growth",
+    description: "Estrategia gastronómica integral y gestión de redes para Big Six en Bahía Blanca. Diseñamos dinámicas de Reels con alto nivel de antojo (food porn), contenido local de tendencia y campañas geolocalizadas que dispararon el volumen de ventas e interacciones en locales y delivery.",
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=800",
+    tags: ["Big Six", "Bahía Blanca", "Gastronomía", "Social Ads"],
+    website: "https://www.instagram.com/bigsix.bb",
+    metrics: { growth: "+250% Pedidos", reach: "950K Local" },
     imageCarousel: [
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=800"
+      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&q=80&w=800"
     ],
     testimonial: {
-      text: "El enfoque estratégico de la agencia permitió que mi marca personal finalmente reflejara mis valores reales.",
-      author: "C. Briela",
-      role: "Influencer"
+      text: "Camila Briela Agency se convirtió en un aliado clave en Bahía Blanca. La respuesta del público fue inmediata.",
+      author: "Big Six",
+      role: "Bahía Blanca, Argentina"
     }
   },
   {
-    id: 2,
-    title: "Urban Fashion Editorial",
-    category: "Content Production",
-    description: "Producción integral de sesiones fotográficas y video para campañas de moda urbana. Logramos posicionar las piezas de contenido en la sección 'Explora' de Instagram de forma recurrente.",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800",
-    tags: ["Photography", "Fashion", "Art Direction"],
-    website: "https://instagram.com/camilabriela",
-    metrics: { growth: "+140%", reach: "850k" },
+    id: 103,
+    title: "ByFy App (Movilidad)",
+    category: "App Growth & Performance Marketing",
+    description: "Campañas de adquisición de usuarios (User Acquisition) y posicionamiento para ByFy, la innovadora aplicación de movilidad urbana (estilo Uber). Desarrollamos creativos orientados a la conversión de descargas, fidelización de conductores y campañas masivas de presencia digital.",
+    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=800",
+    tags: ["ByFy App", "Movilidad Urbana", "Performance", "User Acquisition"],
+    website: "https://byfy.com.ar",
+    metrics: { growth: "+350% Descargas", reach: "2.1M Impresiones" },
     imageCarousel: [
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1539109132314-3477524c859c?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1529139513055-07f909ef3d5c?auto=format&fit=crop&q=80&w=800"
+      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1557223562-6c77ef16210f?auto=format&fit=crop&q=80&w=800"
     ],
     testimonial: {
-      text: "Calidad cinematográfica aplicada a redes sociales. Superaron todas nuestras expectativas de producción.",
-      author: "Vogue Creative Lab",
-      role: "Editorial Partner"
+      text: "Transformaron nuestra estrategia de adquisición para ByFy. El costo por descarga bajó radicalmente mientras escalamos el volumen de viajes.",
+      author: "Equipo ByFy",
+      role: "Movilidad & Traslados"
     }
   },
   {
-    id: 3,
-    title: "Lifestyle Curator",
-    category: "Influencer Management",
-    description: "Gestión estratégica de alianzas con marcas premium de lifestyle. Curaduría de contenido que mantiene la esencia personal mientras integra productos de forma nativa y efectiva.",
-    image: "https://images.unsplash.com/photo-1496449903678-68ddcb189a24?auto=format&fit=crop&q=80&w=800",
-    tags: ["Partnerships", "Lifestyle", "Content Creation"],
-    website: "https://instagram.com/camilabriela",
-    metrics: { growth: "x3 ROI", reach: "2.4M" },
+    id: 104,
+    title: "Tampicos (Bahía Blanca)",
+    category: "Branding & Social Media Gastronómico",
+    description: "Estrategia integral de contenidos y posicionamiento de marca para Tampicos, la icónica panchería de Bahía Blanca. Creamos videos de alto impacto visual, campañas de antojo instantáneo (food porn) y promociones dinámicas para potenciar las ventas en local y take-away.",
+    image: "https://images.unsplash.com/photo-1627286121406-039c2980c541?auto=format&fit=crop&q=80&w=800",
+    tags: ["Tampicos", "Bahía Blanca", "Panchería", "Social Media", "Reels"],
+    website: "https://www.instagram.com/tampicos.bb",
+    metrics: { growth: "+200% Alcance Local", reach: "750K Views" },
     imageCarousel: [
-      "https://images.unsplash.com/photo-1496449903678-68ddcb189a24?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?auto=format&fit=crop&q=80&w=800"
-    ]
-  },
-  {
-    id: 4,
-    title: "Reels Viral Strategy",
-    category: "Video Marketing",
-    description: "Desarrollo de guiones y edición dinámica para Reels altamente compartibles. Logramos hitos de visualizaciones que superaron los 5 millones, expandiendo el alcance global del perfil.",
-    image: "https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&q=80&w=800",
-    tags: ["Virality", "Video Editing", "IG Reels"],
-    website: "https://instagram.com/camilabriela",
-    metrics: { growth: "+5M Views", reach: "3.2M" },
-    imageCarousel: [
-      "https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1470252649358-96f3cf5f2f7e?auto=format&fit=crop&q=80&w=800"
-    ]
-  },
-  {
-    id: 5,
-    title: "Estética Editorial",
-    category: "Creative Direction",
-    description: "Inspirado en tendencias globales, desarrollamos una narrativa visual que eleva la marca a un estatus aspiracional. Curaduría minuciosa de cada pieza de contenido.",
-    image: "https://images.unsplash.com/photo-1492633423870-43d1cd2775ff?auto=format&fit=crop&q=80&w=800",
-    tags: ["Curaduría", "Global Trends", "Luxury"],
-    website: "https://instagram.com/camilabriela",
-    metrics: { growth: "+95%", reach: "4.1M" },
-    imageCarousel: [
-      "https://images.unsplash.com/photo-1492633423870-43d1cd2775ff?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&q=80&w=800"
+      "https://images.unsplash.com/photo-1627286121406-039c2980c541?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&q=80&w=800"
     ],
     testimonial: {
-      text: "La capacidad de Camila para captar la esencia de una marca y elevarla visualmente es incomparable en la industria actual.",
-      author: "Marta R.",
-      role: "Luxury Brand Manager"
+      text: "El equipo captó perfectamente el espíritu festivo y sabroso de Tampicos. La interacción en redes se multiplicó de inmediato.",
+      author: "Tampicos Panchería",
+      role: "Bahía Blanca, Argentina"
+    }
+  },
+  {
+    id: 105,
+    title: "Fiesta Nacional de la Confluencia",
+    category: "Coordinación & Cobertura de Eventos Masivos",
+    description: "Cobertura integral de contenido audiovisual en vivo, historias en tiempo real y producción de Reels virales para la Fiesta Nacional de la Confluencia en Neuquén. Capturamos la energía de cientos de miles de espectadores, shows principales y backstages de artistas de primer nivel.",
+    image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=800",
+    tags: ["Fiesta de la Confluencia", "Neuquén", "Eventos Masivos", "Cobertura en Vivo", "Reels"],
+    website: "https://www.instagram.com",
+    metrics: { growth: "+400% Alcance Festival", reach: "5.2M Views" },
+    imageCarousel: [
+      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800"
+    ],
+    testimonial: {
+      text: "La velocidad de edición en vivo y la calidad cinematográfica del contenido durante la Confluencia fueron sencillamente impactantes.",
+      author: "Prensa & Cobertura",
+      role: "Fiesta de la Confluencia, Neuquén"
+    }
+  },
+  {
+    id: 106,
+    title: "Recital: Luck Ra y Q' Lokura",
+    category: "Live Shows & Music Content Strategy",
+    description: "Producción audiovisual de alto impacto, cobertura tras bambalinas y dinámicas de contenido de tendencia durante el show en vivo de Luck Ra y Q' Lokura. Registramos el fervor del público y momentos cúlmine del recital para generar Reels y TikToks de alcance viral instantáneo.",
+    image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80&w=800",
+    tags: ["Luck Ra", "Q' Lokura", "Recital en Vivo", "Cuarteto", "Backstage"],
+    website: "https://www.instagram.com",
+    metrics: { growth: "+320% Interaction", reach: "3.8M Views" },
+    imageCarousel: [
+      "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=800"
+    ],
+    testimonial: {
+      text: "El ritmo del material grabado durante el show capturó la fiesta del cuarteto en su máxima expresión viral.",
+      author: "Producción de Shows",
+      role: "Recitales en Vivo"
     }
   }
 ];

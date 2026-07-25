@@ -3,19 +3,24 @@ import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: "Ana García",
-    role: "CEO de EcoFashion",
-    text: "Desde que empezamos a trabajar con el equipo, nuestra presencia en Instagram dio un giro de 180 grados. Las ventas aumentaron un 40% en 3 meses.",
+    name: "Lucciano's Il Gelato",
+    role: "Cadena de Heladerías (Argentina)",
+    text: "La calidad cinematográfica en las piezas audiovisuales y el sentido estético que aportaron a nuestras campañas elevó el engagement de la marca a nivel internacional.",
   },
   {
-    name: "Martín Sosa",
-    role: "Fundador de TechHub",
-    text: "Su enfoque estratégico y la claridad en el project management nos permitieron lanzar nuestra app sin estrés y con un alcance masivo.",
+    name: "Big Six",
+    role: "Gastronomía en Bahía Blanca",
+    text: "Camila Briela Agency transformó por completo nuestra presencia en Bahía Blanca. Dispararon los pedidos y el reconocimiento local con piezas de contenido irresistibles.",
   },
   {
-    name: "Lucía Pérez",
-    role: "Restaurateur",
-    text: "Entendieron la esencia de mi restaurante al instante. El diseño web es impecable y la gestión de contenido es arte puro.",
+    name: "Tampicos",
+    role: "Panchería en Bahía Blanca",
+    text: "El equipo logró capturar el sabor y la mística de Tampicos en videos cortos de alto impacto, multiplicando la interacción y convocatoria en nuestro local.",
+  },
+  {
+    name: "ByFy App",
+    role: "App de Movilidad Urbana",
+    text: "Optimizaron los costos de adquisición por descarga e impulsaron la adopción masiva de ByFy como la aplicación de viajes y traslados de preferencia.",
   }
 ];
 
@@ -34,7 +39,7 @@ export default function Testimonials() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {testimonials.map((t, index) => (
             <motion.div
               key={index}
