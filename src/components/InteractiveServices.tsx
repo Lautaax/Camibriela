@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Compass, Film, Users, ArrowRight, CheckCircle2, X, TrendingUp, Sparkles, ChevronDown, MessageCircle } from 'lucide-react';
+import { Compass, Film, Users, Palette, ArrowRight, CheckCircle2, X, TrendingUp, Sparkles, ChevronDown, MessageCircle } from 'lucide-react';
 
 const coreServices = [
   {
@@ -13,9 +13,9 @@ const coreServices = [
     shadow: "shadow-[0_0_50px_rgba(168,85,247,0.15)]",
     bullet: "border-purple-500 text-purple-400",
     metrics: [
-      { label: "Engagement Promedio", value: "+180%" },
+      { label: "Engagement", value: "+180%" },
       { label: "ROI Promedio", value: "3.5x" },
-      { label: "Crecimiento Orgánico", value: "+120%" },
+      { label: "Crecimiento", value: "+120%" },
     ],
     details: [
       "Posicionamiento y narrativa de marca premium.",
@@ -36,9 +36,9 @@ const coreServices = [
     shadow: "shadow-[0_0_50px_rgba(236,72,153,0.15)]",
     bullet: "border-pink-500 text-pink-400",
     metrics: [
-      { label: "Views en Reels", value: "4.5M+" },
-      { label: "Retención de Video", value: "85%" },
-      { label: "Alcance en No Seguidores", value: "+250%" },
+      { label: "Views Reels", value: "4.5M+" },
+      { label: "Retención", value: "85%" },
+      { label: "Alcance No Seg.", value: "+250%" },
     ],
     details: [
       "Producción de video cinematográfico en formato vertical.",
@@ -59,9 +59,9 @@ const coreServices = [
     shadow: "shadow-[0_0_50px_rgba(59,130,246,0.15)]",
     bullet: "border-blue-500 text-blue-400",
     metrics: [
-      { label: "Conversión DM a Ventas", value: "+350%" },
-      { label: "Tiempo de Respuesta", value: "<15 min" },
-      { label: "Nuevos Leads Mensuales", value: "+2.5K" },
+      { label: "Conversión DM", value: "+350%" },
+      { label: "Respuestas", value: "<15 min" },
+      { label: "Leads/Mes", value: "+2.5K" },
     ],
     details: [
       "Administración y publicación activa diaria.",
@@ -71,6 +71,29 @@ const coreServices = [
     ],
     extendedInfo: "Nos encargamos de todo el ecosistema digital de tu marca para que puedas enfocarte puramente en operar tu negocio mientras tu comunidad crece y convierte a diario.",
     description: "Nos encargamos de todo el ecosistema digital de tu marca para que puedas enfocarte puramente en operar tu negocio."
+  },
+  {
+    id: 'branding',
+    title: "Branding & Identidad",
+    tagline: "Diseño único de nivel internacional.",
+    icon: Palette,
+    color: "from-amber-500/20 to-orange-500/20",
+    border: "group-hover:border-amber-500/50",
+    shadow: "shadow-[0_0_50px_rgba(245,158,11,0.15)]",
+    bullet: "border-amber-500 text-amber-400",
+    metrics: [
+      { label: "Reconocimiento", value: "+200%" },
+      { label: "Retención Visual", value: "4.2x" },
+      { label: "Feed Conversion", value: "+150%" },
+    ],
+    details: [
+      "Brand Guidelines & Manual de Marca completo.",
+      "Plantillas editables para historias, feed y carruseles.",
+      "Diseño de merchandising, papelería y empaques.",
+      "Curaduría estética de paleta tipográfica y cromática."
+    ],
+    extendedInfo: "Construimos un universo gráfico coherente y memorable que eleva la percepción de tu marca al nivel de las grandes firmas de la industria.",
+    description: "Diseño de identidad único que destaca en el feed y posiciona tu negocio en un nivel visual superior."
   }
 ];
 
@@ -112,7 +135,7 @@ export default function InteractiveServices() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {coreServices.map((service) => {
             const IconComponent = service.icon;
             const isHovered = hoveredId === service.id;

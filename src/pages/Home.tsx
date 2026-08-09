@@ -1,7 +1,6 @@
 import Hero from '../components/Hero';
 import Partners from '../components/Partners';
 import InteractiveServices from '../components/InteractiveServices';
-import Services from '../components/Services';
 import Portfolio from '../components/Portfolio';
 import CaseStudies from '../components/CaseStudies';
 import SemCalculator from '../components/SemCalculator';
@@ -29,7 +28,6 @@ export default function Home() {
       <Hero />
       <Partners />
       <InteractiveServices />
-      <Services />
       <Portfolio />
       <CaseStudies />
       <SemCalculator />
