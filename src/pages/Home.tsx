@@ -1,6 +1,7 @@
 import Hero from '../components/Hero';
 import Partners from '../components/Partners';
 import InteractiveServices from '../components/InteractiveServices';
+import ReelsFeedPlayer from '../components/ReelsFeedPlayer';
 import CaseStudies from '../components/CaseStudies';
 import SemCalculator from '../components/SemCalculator';
 import Testimonials from '../components/Testimonials';
@@ -27,6 +28,7 @@ export default function Home() {
       <Hero />
       <Partners />
       <InteractiveServices />
+      <ReelsFeedPlayer />
       <CaseStudies />
       <SemCalculator />
       <Process />
