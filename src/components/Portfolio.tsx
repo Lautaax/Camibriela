@@ -142,6 +142,26 @@ const projects = [
       author: "Pituca Pastelería",
       role: "Villa Urquiza, CABA"
     }
+  },
+  {
+    id: 108,
+    title: "HUM STUDIO",
+    category: "Pilates, Wellness & Estética Minimalista",
+    description: "Desarrollo de identidad visual, dirección artística y producción de contenidos audiovisuales para HUM STUDIO (Palermo Hollywood, CABA). Registramos la estética cálida y minimalista del espacio, las clases de Pilates reformer y la atmósfera envolvente de luces ambarinas para transmitir la experiencia consciente de la marca.",
+    image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&q=80&w=800",
+    tags: ["HUM STUDIO", "Palermo Hollywood", "Pilates Reformer", "Wellness", "Contenido Estético"],
+    website: "https://www.instagram.com/humstudio.ar",
+    metrics: { growth: "Palermo Hollywood", reach: "+250% Engagement" },
+    imageCarousel: [
+      "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800"
+    ],
+    testimonial: {
+      text: "Lograron retratar exactamente la serenidad y la calidez ambarina de nuestro estudio en Palermo. La interacción en redes se multiplicó orgánicamente.",
+      author: "HUM STUDIO",
+      role: "Palermo Hollywood, CABA"
+    }
   }
 ];
 
@@ -153,11 +173,16 @@ function ProjectCard({ project, index, onSelect }: { project: any, index: number
       layoutId={project.id.toString()}
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
+      whileHover={{ y: -8, scale: 1.02 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
+      transition={{ delay: index * 0.08, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
       onClick={() => onSelect(project.id)}
-      className="group relative h-[400px] overflow-hidden rounded-[40px] cursor-pointer bg-white/5 border border-white/5 hover:border-brand-purple/30 transition-colors"
+      className="group relative h-[400px] overflow-hidden rounded-[40px] cursor-pointer bg-white/5 border border-white/10 hover:border-brand-purple/60 hover:shadow-[0_0_40px_rgba(168,85,247,0.25)] transition-all duration-500"
     >
+      {/* Lighting overlay glow on hover */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-brand-purple/20 via-transparent to-amber-400/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
+      <div className="absolute -top-24 -right-24 w-48 h-48 bg-brand-purple/30 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 pointer-events-none z-10" />
+
       <AnimatePresence>
         {!isLoaded && (
           <motion.div 
@@ -179,11 +204,11 @@ function ProjectCard({ project, index, onSelect }: { project: any, index: number
         src={project.image} 
         alt={project.title}
         onLoad={() => setIsLoaded(true)}
-        className={`w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 ${isLoaded ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-105 blur-md'}`}
+        className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110 ${isLoaded ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-105 blur-md'}`}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 sm:opacity-60 sm:group-hover:opacity-90 transition-opacity" />
       
-      <div className="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-10 sm:right-10">
+      <div className="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-10 sm:right-10 z-20">
         <p className="text-brand-purple text-[11px] sm:text-xs uppercase tracking-widest font-bold mb-1.5 sm:mb-2 transform translate-y-0 sm:translate-y-4 opacity-100 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100 transition-all duration-500">
           {project.category}
         </p>
