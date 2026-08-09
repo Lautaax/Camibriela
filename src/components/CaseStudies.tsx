@@ -13,6 +13,13 @@ const data = [
 
 const stats = [
   {
+    client: "Pituca Pastelería",
+    metric: "10.4K+",
+    label: "Comunidad & Aperturas CABA",
+    icon: Users,
+    color: "text-amber-400"
+  },
+  {
     client: "Fiesta de la Confluencia",
     metric: "5.2M",
     label: "Views Cobertura Neuquén",
@@ -32,13 +39,6 @@ const stats = [
     label: "Crecimiento en Pedidos",
     icon: TrendingUp,
     color: "text-orange-400"
-  },
-  {
-    client: "ByFy App & Recitales",
-    metric: "+350%",
-    label: "Descargas y Engagement",
-    icon: Users,
-    color: "text-blue-400"
   }
 ];
 

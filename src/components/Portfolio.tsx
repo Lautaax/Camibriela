@@ -122,6 +122,26 @@ const projects = [
       author: "Producción de Shows",
       role: "Recitales en Vivo"
     }
+  },
+  {
+    id: 107,
+    title: "Pituca Pastelería Artesanal",
+    category: "Gastronomía, Aperturas & Reels Virales",
+    description: "Estrategia integral de contenidos, comunicación de nuevas aperturas de locales (Villa Urquiza, Monroe y Costa Atlántica) y producción de Reels virales para Pituca Pastelería Artesanal ®. Capturamos la artesanía gastronómica, historias detrás de escena del equipo y tentadores primeros planos de sus productos para afianzar una comunidad de más de 10.4K seguidores hiper-fidelizados.",
+    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=800",
+    tags: ["Pituca Pastelería", "Villa Urquiza", "Pastelería Artesanal", "Aperturas de Locales", "Reels Virales"],
+    website: "https://linktr.ee/pitucapasteleria",
+    metrics: { growth: "10.4K+ Comunidad", reach: "1.2M Views Reels" },
+    imageCarousel: [
+      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=800"
+    ],
+    testimonial: {
+      text: "La estrategia de Reels y la cobertura de la apertura de nuestros nuevos locales transmitió la calidez de Pituca tal como la soñábamos. La respuesta de la gente fue inmediata.",
+      author: "Pituca Pastelería",
+      role: "Villa Urquiza, CABA"
+    }
   }
 ];
 
