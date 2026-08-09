@@ -7,6 +7,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import MobileActionBar from './components/MobileActionBar';
 import CustomCursor from './components/CustomCursor';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -20,7 +21,7 @@ import Terms from './pages/Terms';
 export default function App() {
   return (
     <Router>
-      <div className="min-h-screen relative bg-dark-bg text-white">
+      <div className="min-h-screen relative bg-dark-bg text-white pb-16 sm:pb-0">
         <ScrollToTop />
         <CustomCursor />
         <Navbar />
@@ -36,6 +37,7 @@ export default function App() {
         </main>
         <Footer />
         <WhatsAppButton />
+        <MobileActionBar />
       </div>
     </Router>
   );

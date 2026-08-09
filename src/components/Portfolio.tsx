@@ -161,15 +161,19 @@ function ProjectCard({ project, index, onSelect }: { project: any, index: number
         onLoad={() => setIsLoaded(true)}
         className={`w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 ${isLoaded ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-105 blur-md'}`}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 sm:opacity-60 sm:group-hover:opacity-90 transition-opacity" />
       
-      <div className="absolute bottom-10 left-10 right-10">
-        <p className="text-brand-purple text-xs uppercase tracking-widest font-bold mb-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+      <div className="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-10 sm:right-10">
+        <p className="text-brand-purple text-[11px] sm:text-xs uppercase tracking-widest font-bold mb-1.5 sm:mb-2 transform translate-y-0 sm:translate-y-4 opacity-100 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100 transition-all duration-500">
           {project.category}
         </p>
-        <h3 className="text-3xl font-display font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">
+        <h3 className="text-2xl sm:text-3xl font-display font-bold text-white transform translate-y-0 sm:translate-y-4 sm:group-hover:translate-y-0 transition-all duration-500 delay-75 leading-tight">
           {project.title}
         </h3>
+        <p className="text-xs text-white/70 mt-1 sm:hidden flex items-center gap-1 font-medium">
+          <span>Ver caso completo</span>
+          <ChevronRight className="w-3.5 h-3.5 text-brand-purple" />
+        </p>
       </div>
     </motion.div>
   );
