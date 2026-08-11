@@ -84,7 +84,7 @@ export default function SemCalculator() {
             className="text-3xl sm:text-5xl font-display font-extrabold text-white mb-4 leading-tight"
           >
             No elijas un pack. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-vibrant to-pink-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-vibrant to-orange-400">
               Construí lo que tu marca necesita.
             </span>
           </motion.h2>

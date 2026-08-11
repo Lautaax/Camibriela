@@ -39,7 +39,7 @@ export default function About() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-display font-bold mb-8"
           >
-            Detrás de Digital Glow <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-vibrant to-pink-500">está Camila Briela.</span>
+            Detrás de Digital Glow <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-vibrant to-orange-500">está Camila Briela.</span>
           </motion.h2>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

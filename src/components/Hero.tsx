@@ -71,7 +71,7 @@ export default function Hero() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -50, opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="absolute text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-vibrant to-pink-500 whitespace-nowrap text-3xl sm:text-5xl md:text-6xl"
+                className="absolute text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-vibrant to-orange-500 whitespace-nowrap text-3xl sm:text-5xl md:text-6xl"
               >
                 "{phrases[phraseIndex]}"
               </motion.span>
