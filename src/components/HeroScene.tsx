@@ -29,37 +29,24 @@ export default function HeroScene() {
     resizeObserver.observe(canvas);
 
     // Particles configuration
-    const particleCount = 25;
+    const particleCount = 100;
     const particles: Array<{
       x: number;
       y: number;
       vx: number;
       vy: number;
       radius: number;
-      baseRadius: number;
-      color: string;
-      pulseSpeed: number;
-      pulseTime: number;
+      alpha: number;
     }> = [];
 
-    const colors = [
-      'rgba(168, 85, 247, 0.15)', // Purple
-      'rgba(139, 92, 246, 0.12)', // Vibrant
-      'rgba(124, 58, 237, 0.10)',  // Deep Violet
-    ];
-
     for (let i = 0; i < particleCount; i++) {
-      const baseRadius = Math.random() * 120 + 60;
       particles.push({
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        baseRadius,
-        radius: baseRadius,
-        color: colors[Math.floor(Math.random() * colors.length)],
-        pulseSpeed: 0.003 + Math.random() * 0.005,
-        pulseTime: Math.random() * Math.PI * 2,
+        vx: (Math.random() - 0.5) * 0.2,
+        vy: (Math.random() - 0.5) * 0.2,
+        radius: Math.random() * 1.5 + 0.5,
+        alpha: Math.random() * 0.5 + 0.1,
       });
     }
 
@@ -85,54 +72,69 @@ export default function HeroScene() {
         return;
       }
 
-      // Fill background
-      ctx.fillStyle = 'var(--color-dark-bg, #030206)';
+      // Fill background with a very dark gradient
+      const bgGradient = ctx.createRadialGradient(
+        rect.width / 2, rect.height / 2, 0,
+        rect.width / 2, rect.height / 2, rect.width
+      );
+      bgGradient.addColorStop(0, '#0a0512');
+      bgGradient.addColorStop(1, '#030206');
+      
+      ctx.fillStyle = bgGradient;
       ctx.fillRect(0, 0, rect.width, rect.height);
 
       // Smoothly interpolate mouse position
       mouse.x += (mouse.targetX - mouse.x) * 0.08;
       mouse.y += (mouse.targetY - mouse.y) * 0.08;
 
-      // Draw flowing background abstract blobs
+      // Draw subtle particles
       particles.forEach((p) => {
         // Move
         p.x += p.vx;
         p.y += p.vy;
 
         // Wrap around bounds
-        if (p.x < -p.radius) p.x = rect.width + p.radius;
-        if (p.x > rect.width + p.radius) p.x = -p.radius;
-        if (p.y < -p.radius) p.y = rect.height + p.radius;
-        if (p.y > rect.height + p.radius) p.y = -p.radius;
+        if (p.x < 0) p.x = rect.width;
+        if (p.x > rect.width) p.x = 0;
+        if (p.y < 0) p.y = rect.height;
+        if (p.y > rect.height) p.y = 0;
 
-        // Pulse size
-        p.pulseTime += p.pulseSpeed;
-        p.radius = p.baseRadius + Math.sin(p.pulseTime) * 20;
-
-        // Mouse attraction
+        // Mouse avoidance/attraction
         if (mouse.active) {
           const dx = mouse.x - p.x;
           const dy = mouse.y - p.y;
           const dist = Math.hypot(dx, dy);
-          if (dist < 350) {
-            const force = (350 - dist) / 350;
-            p.x += (dx / dist) * force * 0.4;
-            p.y += (dy / dist) * force * 0.4;
+          if (dist < 150) {
+            const force = (150 - dist) / 150;
+            p.x -= (dx / dist) * force * 0.5;
+            p.y -= (dy / dist) * force * 0.5;
           }
         }
 
-        // Draw radial gradient for each blob (creates the liquid mesh glow)
-        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius);
-        gradient.addColorStop(0, p.color);
-        gradient.addColorStop(1, 'rgba(3, 2, 6, 0)');
-        
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = gradient;
+        ctx.fillStyle = `rgba(168, 85, 247, ${p.alpha})`;
         ctx.fill();
       });
 
-      // Render loop ends without drawing grid lines
+      // Draw connecting lines if particles are close
+      ctx.lineWidth = 0.5;
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.hypot(dx, dy);
+          
+          if (dist < 100) {
+            const alpha = (1 - dist / 100) * 0.2;
+            ctx.strokeStyle = `rgba(168, 85, 247, ${alpha})`;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
 
       animationFrameId = requestAnimationFrame(render);
     };
