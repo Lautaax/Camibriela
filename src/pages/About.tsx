@@ -1,7 +1,6 @@
 import About from '../components/About';
 import Team from '../components/Team';
 import Process from '../components/Process';
-import Testimonials from '../components/Testimonials';
 import SEO from '../components/SEO';
 import { motion } from 'motion/react';
 
@@ -21,7 +20,6 @@ export default function AboutPage() {
       <About />
       <Team />
       <Process />
-      <Testimonials />
     </motion.div>
   );
 }

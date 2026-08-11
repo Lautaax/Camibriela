@@ -1,10 +1,28 @@
-import { motion } from 'motion/react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { ArrowDown, Sparkles, TrendingUp, Award, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import HeroScene from './HeroScene';
 
+const phrases = [
+  "el impacto que merece",
+  "el contenido que la representa",
+  "una comunicación a su altura",
+  "ideas que la hagan diferente",
+  "la mirada que necesita"
+];
+
 export default function Hero() {
+  const [phraseIndex, setPhraseIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPhraseIndex((prev) => (prev + 1) % phrases.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 overflow-hidden pt-24 pb-16">
       {/* 3D Background */}
@@ -38,25 +56,37 @@ export default function Hero() {
           <span className="hidden sm:inline-block text-brand-purple font-bold">Auditoría Gratuita 24hs</span>
         </motion.div>
         
-        <motion.h1 
+        <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-4xl sm:text-6xl md:text-8xl font-display font-extrabold leading-[1.05] tracking-tight mb-6 sm:mb-8 text-balance"
+          className="text-4xl sm:text-6xl md:text-8xl font-display font-extrabold leading-[1.05] tracking-tight mb-6 sm:mb-8 text-balance flex flex-col items-center"
         >
-          ¡Que tu marca tenga <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-vibrant to-pink-500">
-            EL IMPACTO QUE MERECE!
-          </span>
-        </motion.h1>
+          <span>Que tu marca tenga</span>
+          <div className="h-[1.2em] relative overflow-hidden w-full flex justify-center mt-2">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={phraseIndex}
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -50, opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="absolute text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-vibrant to-pink-500 whitespace-nowrap text-3xl sm:text-5xl md:text-6xl"
+              >
+                "{phrases[phraseIndex]}"
+              </motion.span>
+            </AnimatePresence>
+          </div>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="text-white/70 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed font-normal"
+          className="text-white/70 text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-8 sm:mb-10 leading-relaxed font-normal"
         >
-          Especialistas en escalar negocios, marcas y eventos masivos con estrategias de contenido viral, Google & Meta Ads y campañas orientadas a resultados.
+          No somos una agencia tradicional. Somos el equipo creativo que se convierte en parte de tu marca.
+          Combinamos estrategia, creatividad, contenido y ejecución para construir una comunicación que tenga sentido para tu negocio, represente lo que sos y te ayude a crecer.
         </motion.p>
 
         {/* Action Buttons */}

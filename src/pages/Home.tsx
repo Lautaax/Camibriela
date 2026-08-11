@@ -1,12 +1,8 @@
 import Hero from '../components/Hero';
 import Partners from '../components/Partners';
 import InteractiveServices from '../components/InteractiveServices';
-import ReelsFeedPlayer from '../components/ReelsFeedPlayer';
 import ServicePacks from '../components/ServicePacks';
-import BrandQuiz from '../components/BrandQuiz';
-import CaseStudies from '../components/CaseStudies';
 import SemCalculator from '../components/SemCalculator';
-import Testimonials from '../components/Testimonials';
 import Process from '../components/Process';
 import AgencyPulse from '../components/AgencyPulse';
 import FAQ from '../components/FAQ';
@@ -30,13 +26,8 @@ export default function Home() {
       <Hero />
       <Partners />
       <InteractiveServices />
-      <ReelsFeedPlayer />
-      <ServicePacks />
-      <BrandQuiz />
-      <CaseStudies />
       <SemCalculator />
       <Process />
-      <Testimonials />
       <AgencyPulse />
       <FAQ />
       <Contact />

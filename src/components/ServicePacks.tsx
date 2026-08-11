@@ -1,19 +1,13 @@
-import { useState } from 'react';
 import { motion } from 'motion/react';
-import { CheckCircle2, Zap, Sparkles, MessageCircle, ArrowRight, ShieldCheck, Star, Layers, Calendar, Video, Flame } from 'lucide-react';
+import { CheckCircle2, Zap, Sparkles, MessageCircle, ShieldCheck, Star, Layers } from 'lucide-react';
 
 export default function ServicePacks() {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'quarterly'>('monthly');
-
-  const discountMultiplier = billingCycle === 'quarterly' ? 0.85 : 1;
-
   const packs = [
     {
       id: 'starter',
       title: 'Pack Starter Growth',
       badge: 'Marcas Locales',
       popular: false,
-      priceMonthly: 210000,
       desc: 'Pensado para negocios locales que buscan presencia constante, estética profesional y crecimiento orgánico.',
       features: [
         'Gestión activa de Instagram & TikTok',
@@ -31,7 +25,6 @@ export default function ServicePacks() {
       title: 'Pack Pro Content & Performance',
       badge: 'Más Elegido ⭐',
       popular: true,
-      priceMonthly: 380000,
       desc: 'El combo ideal entre producción audiovisual cinematográfica y campañas pagas en Meta Ads para acelerar ventas.',
       features: [
         'Todo lo del Pack Starter +',
@@ -50,7 +43,6 @@ export default function ServicePacks() {
       title: 'Membresía 360° Scale',
       badge: 'Empresas & Cadenas',
       popular: false,
-      priceMonthly: 620000,
       desc: 'Dirección creativa integral con equipo asignado exclusivo para marcas líderes, franchisings o e-commerce.',
       features: [
         'Gestión integral multicanal 360°',
@@ -69,7 +61,6 @@ export default function ServicePacks() {
       title: 'Membresía Abierta On-Demand',
       badge: 'Formato a la Carta',
       popular: false,
-      priceMonthly: 280000,
       desc: 'Membresía flexible con créditos mensuales de producción. Vos elegís mes a mes en qué enfocamos el equipo.',
       features: [
         'Créditos canjeables por Rodaje, Ads o Reels',
@@ -92,7 +83,7 @@ export default function ServicePacks() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Title */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +91,7 @@ export default function ServicePacks() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-purple/15 border border-brand-purple/30 text-brand-purple text-xs font-bold uppercase tracking-widest mb-4"
           >
             <Layers className="w-3.5 h-3.5 text-amber-400" />
-            <span>Planes Transparentes & Flexibles</span>
+            <span>Planes & Membresías Adaptables</span>
           </motion.div>
 
           <motion.h2
@@ -121,43 +112,15 @@ export default function ServicePacks() {
             viewport={{ once: true }}
             className="text-white/60 text-sm sm:text-base leading-relaxed"
           >
-            Sumá a tu marca un equipo de creativos, realizadores y media buyers. Sin contratos atados, con la máxima agilidad de ejecución.
+            Sumá a tu marca un equipo de creativos, realizadores y media buyers. Cotización a medida según la escala y requerimientos de tu proyecto.
           </motion.p>
-
-          {/* Billing Cycle Switcher */}
-          <div className="mt-8 inline-flex items-center gap-3 p-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
-            <button
-              onClick={() => setBillingCycle('monthly')}
-              className={`px-5 py-2 rounded-full text-xs font-bold transition-all ${
-                billingCycle === 'monthly'
-                  ? 'bg-brand-purple text-white shadow-lg shadow-purple-950/40'
-                  : 'text-white/60 hover:text-white'
-              }`}
-            >
-              Facturación Mensual
-            </button>
-            <button
-              onClick={() => setBillingCycle('quarterly')}
-              className={`px-5 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 ${
-                billingCycle === 'quarterly'
-                  ? 'bg-brand-purple text-white shadow-lg shadow-purple-950/40'
-                  : 'text-white/60 hover:text-white'
-              }`}
-            >
-              <span>Trimestral</span>
-              <span className="bg-amber-400 text-black text-[10px] font-extrabold px-2 py-0.5 rounded-full">
-                15% OFF
-              </span>
-            </button>
-          </div>
         </div>
 
         {/* Packs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {packs.map((pack, index) => {
-            const finalPrice = Math.round(pack.priceMonthly * discountMultiplier);
             const whatsappMsg = encodeURIComponent(
-              `Hola! Me interesa consultar por el *${pack.title}* (${billingCycle === 'quarterly' ? 'Plan Trimestral con 15% OFF' : 'Plan Mensual'}). Quiero solicitar mi auditoría técnica gratuita.`
+              `Hola! Me interesa consultar por el *${pack.title}*. Quiero solicitar una propuesta y cotización personalizada para mi marca.`
             );
 
             return (
@@ -189,17 +152,11 @@ export default function ServicePacks() {
                   <h3 className="text-xl font-bold text-white mb-2">{pack.title}</h3>
                   <p className="text-white/60 text-xs leading-relaxed mb-6">{pack.desc}</p>
 
-                  <div className="mb-6 pb-6 border-b border-white/10">
-                    <div className="text-xs text-white/40 uppercase tracking-widest font-mono">Inversión Estimada</div>
-                    <div className="text-3xl font-extrabold text-white tracking-tight mt-1">
-                      ${finalPrice.toLocaleString('es-AR')}{' '}
-                      <span className="text-xs font-semibold text-brand-vibrant">ARS / mes</span>
-                    </div>
-                    {billingCycle === 'quarterly' && (
-                      <span className="text-[10px] text-amber-300 font-mono block mt-1">
-                        Ahorrás ${(pack.priceMonthly * 0.15).toLocaleString('es-AR')} ARS por mes
-                      </span>
-                    )}
+                  <div className="mb-6 pb-4 border-b border-white/10 flex items-center justify-between">
+                    <span className="text-xs text-white/40 uppercase tracking-widest font-mono">Modalidad</span>
+                    <span className="text-xs font-bold text-amber-300 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
+                      Presupuesto a Medida
+                    </span>
                   </div>
 
                   {/* Feature list */}
@@ -229,7 +186,7 @@ export default function ServicePacks() {
                     }`}
                   >
                     <MessageCircle className="w-4 h-4 fill-current" />
-                    <span>Solicitar este Pack</span>
+                    <span>Consultar Propuesta</span>
                   </a>
                 </div>
               </motion.div>

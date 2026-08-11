@@ -16,7 +16,6 @@ export default function About() {
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
                 <div className="relative z-20 text-center p-8">
                   <p className="text-2xl font-display italic text-brand-purple mb-4">"Tu marca, mi visión"</p>
-                  <p className="text-white/60 text-base">Guiamos a marcas y creadores hacia su versión más auténtica y rentable.</p>
                 </div>
              </div>
           </div>
@@ -31,7 +30,7 @@ export default function About() {
             viewport={{ once: true }}
             className="text-brand-purple font-display font-medium uppercase tracking-[0.2em] mb-4"
           >
-            Nuestra Fundadora
+            NOSOTROS
           </motion.p>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -40,31 +39,39 @@ export default function About() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-display font-bold mb-8"
           >
-            Camila Briela: <br /> <span className="text-white/20">Estrategia con propósito.</span>
+            Detrás de Digital Glow <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-vibrant to-pink-500">está Camila Briela.</span>
           </motion.h2>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="space-y-6 text-white/60 text-lg leading-relaxed"
+            className="space-y-4 text-white/60 text-sm md:text-base leading-relaxed"
           >
             <p>
-              Bajo la dirección de <span className="text-white font-bold">Camila Briela</span>, nuestra agencia nace de la necesidad de elevar el estándar del contenido digital. No creemos en fórmulas genéricas, sino en la curaduría estratégica que conecta con audiencias reales.
+              Digital Glow nació mucho antes de tener este nombre. Nació de una inquietud: la sensación de que el trabajo con marcas podía hacerse de otra manera.
             </p>
             <p>
-              Fusionamos estética visual de alto nivel con análisis de datos para asegurar que cada acción tenga un impacto directo en el crecimiento y la autoridad de tu marca en el mercado global.
+              Camila Briela, de 27 años, comenzó construyendo su propio camino dentro del marketing, rompiendo con las agencias tradicionales, la comunicación y la creación de contenido hasta convertir esa experiencia en un proyecto que hoy trabaja con marcas desde una mirada mucho más integral.
             </p>
-            <div className="grid grid-cols-2 gap-8 pt-4">
-              <div>
-                <p className="text-3xl font-display font-bold text-white leading-none">100%</p>
-                <p className="text-xs uppercase tracking-widest mt-1">Compromiso</p>
-              </div>
-              <div>
-                <p className="text-3xl font-display font-bold text-white leading-none">+5</p>
-                <p className="text-xs uppercase tracking-widest mt-1">Años de Exp.</p>
-              </div>
+            <p>
+              Después de haber trabajado con más de 40 marcas, algo se volvió cada vez más evidente: las marcas no necesitaban solamente alguien que publicara por ellas. Necesitaban alguien que pudiera involucrarse, mirar desde afuera y aportar algo que ellas no estaban pudiendo ver.
+            </p>
+            <p className="text-white font-semibold">
+              Así nació Digital Glow.
+            </p>
+            <p>
+              Una evolución de aquella primera idea de agencia, pero con una definición mucho más clara de lo que queremos ser. No una agencia tradicional. No un proveedor. No alguien que llega, cumple y se va. <strong>Un equipo creativo que se convierte en parte de la marca.</strong>
+            </p>
+            <p>
+              Camila lidera Digital Glow desde una combinación que atraviesa todo nuestro trabajo: <strong>estrategia + creatividad + sensibilidad</strong>. Le interesa entender qué hay detrás de una marca, encontrar aquello que la hace diferente y llevarlo a un lugar que quizás todavía no había imaginado.
+            </p>
+            <div className="p-4 border-l-2 border-brand-purple bg-white/5 my-4 italic">
+              "Porque para nosotros la creatividad no está separada de los resultados. Lo que hacemos tiene que verse bien, sí. Pero también tiene que tener sentido. Tiene que representar a la marca. Tiene que generar algo. Y, sobre todo, tiene que hacer que quien está detrás de ella pueda verla desde afuera y pensar: <strong>‘Esto era lo que quería ver.’</strong>"
             </div>
+            <p>
+              Hoy Digital Glow vive tanto en Bahía Blanca como en Buenos Aires, sin perder algo que estuvo desde el principio: la cercanía. Porque cuanto más crecemos, más queremos conservar la sensación de que detrás de cada marca hay una persona que confió en nosotros para construir algo que le importa.
+            </p>
           </motion.div>
         </div>
       </div>

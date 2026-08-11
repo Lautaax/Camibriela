@@ -15,6 +15,7 @@ import Home from './pages/Home';
 import Work from './pages/Work';
 import AboutPage from './pages/About';
 import ContactPage from './pages/Contact';
+import Diagnostico from './pages/Diagnostico';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 
@@ -30,6 +31,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Work />} />
             <Route path="/nosotros" element={<AboutPage />} />
+            <Route path="/diagnostico" element={<Diagnostico />} />
             <Route path="/contacto" element={<ContactPage />} />
             <Route path="/privacidad" element={<Privacy />} />
             <Route path="/terminos" element={<Terms />} />

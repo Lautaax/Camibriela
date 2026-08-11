@@ -7,6 +7,7 @@ const navItems = [
   { name: 'Inicio', path: '/' },
   { name: 'Portfolio', path: '/portfolio' },
   { name: 'Nosotros', path: '/nosotros' },
+  { name: 'Diagnóstico', path: '/diagnostico' },
   { name: 'Contacto', path: '/contacto' },
 ];
 

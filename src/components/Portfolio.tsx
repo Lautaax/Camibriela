@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, X, ChevronRight } from 'lucide-react';
+import { ExternalLink, X, ChevronRight, Grid, PlaySquare } from 'lucide-react';
+import ReelsFeedPlayer from './ReelsFeedPlayer';
 
 const projects = [
   {
@@ -227,6 +228,7 @@ function ProjectCard({ project, index, onSelect }: { project: any, index: number
 export default function Portfolio() {
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeTab, setActiveTab] = useState<'proyectos' | 'reels'>('proyectos');
   const selectedProject = projects.find(p => p.id === selectedId);
 
   const nextSlide = () => {
@@ -242,8 +244,8 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="portfolio" className="py-24 px-6 relative bg-dark-bg transition-colors duration-500">
-      <div className="max-w-7xl mx-auto">
+    <section id="portfolio" className={`py-24 relative transition-colors duration-500 ${activeTab === 'proyectos' ? 'bg-dark-bg px-6' : 'bg-[#08080c] px-0'}`}>
+      <div className={`max-w-7xl mx-auto ${activeTab === 'reels' ? 'px-6' : ''}`}>
         <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <motion.p 
@@ -263,16 +265,45 @@ export default function Portfolio() {
               Proyectos que hablan por nosotros
             </motion.h2>
           </div>
+          
+          <div className="flex items-center gap-2 p-1.5 bg-white/5 border border-white/10 rounded-2xl w-full md:w-auto overflow-x-auto shrink-0">
+            <button
+              onClick={() => setActiveTab('proyectos')}
+              className={`flex-1 md:flex-none flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all ${
+                activeTab === 'proyectos' 
+                  ? 'bg-gradient-to-r from-brand-purple to-brand-vibrant text-white shadow-lg' 
+                  : 'text-white/50 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <Grid className="w-4 h-4" /> Proyectos Completos
+            </button>
+            <button
+              onClick={() => setActiveTab('reels')}
+              className={`flex-1 md:flex-none flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all ${
+                activeTab === 'reels' 
+                  ? 'bg-gradient-to-r from-brand-purple to-brand-vibrant text-white shadow-lg' 
+                  : 'text-white/50 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <PlaySquare className="w-4 h-4" /> Galería de Reels
+            </button>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} onSelect={(id) => {
-              setSelectedId(id);
-              setCurrentSlide(0);
-            }} />
-          ))}
-        </div>
+        {activeTab === 'proyectos' ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} onSelect={(id) => {
+                setSelectedId(id);
+                setCurrentSlide(0);
+              }} />
+            ))}
+          </div>
+        ) : (
+          <div className="-mx-6 md:mx-0">
+            <ReelsFeedPlayer />
+          </div>
+        )}
       </div>
 
       {/* Modal / Detailed View */}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Film, Compass, Users, Calculator, CheckCircle2, ArrowRight, Sparkles, MessageCircle, Sliders, Layers, Video, Image as ImageIcon } from 'lucide-react';
+import { Film, Compass, Users, Calculator, CheckCircle2, ArrowRight, Sparkles, MessageCircle, Sliders, Layers, Video, Image as ImageIcon, Info } from 'lucide-react';
 
 export default function SemCalculator() {
   // Service Toggles
@@ -25,22 +25,24 @@ export default function SemCalculator() {
   };
 
   const servicesList = [
-    { id: 'estrategia', name: 'Estrategia & Branding', desc: 'Posicionamiento, estudio de mercado y narrativa' },
-    { id: 'gestion_redes', name: 'Gestión de Redes', desc: 'Administración activa, moderación y comunidad' },
-    { id: 'creacion_contenido', name: 'Producción Audiovisual', desc: 'Rodaje, Reels, fotos y edición cinematográfica' },
-    { id: 'sem_ads', name: 'Pauta SEM / Meta & Google Ads', desc: 'Campañas pagas optimizadas para conversión' },
-    { id: 'eventos', name: 'Cobertura de Eventos / Recitales', desc: 'Contenido en vivo en tiempo real para festivales' },
+    { id: 'estrategia', name: 'Estrategia de Marca', desc: 'Diagnóstico, posicionamiento y dirección clara' },
+    { id: 'gestion_redes', name: 'Gestión de Redes', desc: 'Planificación, publicación y continuidad diaria' },
+    { id: 'creacion_contenido', name: 'Creación de Contenido', desc: 'Fotografía, video y edición con dirección creativa' },
+    { id: 'branding', name: 'Branding & Identidad', desc: 'Universo visual, logo y sistema de marca' },
+    { id: 'ads', name: 'Ads & Publicidad', desc: 'Campañas publicitarias y gestión de inversión' },
+    { id: 'web', name: 'Páginas Web', desc: 'Sitios web institucionales o tiendas e-commerce' },
   ];
 
   // Dynamic estimate calculation
   let baseEstimate = 0;
-  if (selectedServices.includes('estrategia')) baseEstimate += 120000;
+  if (selectedServices.includes('estrategia')) baseEstimate += 250000;
   if (selectedServices.includes('gestion_redes')) baseEstimate += 180000;
-  if (selectedServices.includes('creacion_contenido')) baseEstimate += 150000;
-  if (selectedServices.includes('sem_ads')) baseEstimate += 140000;
-  if (selectedServices.includes('eventos')) baseEstimate += 200000;
+  if (selectedServices.includes('creacion_contenido')) baseEstimate += 200000;
+  if (selectedServices.includes('branding')) baseEstimate += 350000;
+  if (selectedServices.includes('ads')) baseEstimate += 150000;
+  if (selectedServices.includes('web')) baseEstimate += 450000;
 
-  const contentEstimate = (reelsCount * 18000) + (videosCount * 45000) + (storiesCount * 2500);
+  const contentEstimate = (reelsCount * 20000) + (videosCount * 50000) + (storiesCount * 3000);
   const totalEstimate = baseEstimate + contentEstimate;
 
   const serviceNames = selectedServices
@@ -52,10 +54,9 @@ export default function SemCalculator() {
     `Hola! Armé una propuesta de servicios personalizada en la web:\n\n` +
     `📌 *Servicios Seleccionados:* ${serviceNames}\n` +
     `🎬 *Reels / TikToks al mes:* ${reelsCount}\n` +
-    `📹 *Videos Producidos / Cobertura:* ${videosCount}\n` +
+    `📹 *Videos Producidos al mes:* ${videosCount}\n` +
     `📸 *Historias al mes:* ${storiesCount}\n\n` +
-    `💰 *Estimado de Inversión Mensual:* ~$${totalEstimate.toLocaleString('es-AR')} ARS\n\n` +
-    `Quiero solicitar mi auditoría técnica y presupuesto formal.`
+    `Quiero avanzar para conocer el valor definitivo para mi proyecto.`
   );
 
   return (
@@ -73,7 +74,7 @@ export default function SemCalculator() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-purple/15 border border-brand-purple/30 text-brand-purple text-xs font-bold uppercase tracking-widest mb-4"
           >
             <Calculator className="w-3.5 h-3.5 text-amber-400" />
-            <span>Cotizador Interactivo de Servicios</span>
+            <span>Personalizá tu Plan</span>
           </motion.div>
 
           <motion.h2
@@ -82,20 +83,21 @@ export default function SemCalculator() {
             viewport={{ once: true }}
             className="text-3xl sm:text-5xl font-display font-extrabold text-white mb-4 leading-tight"
           >
-            Personalizá tu Plan de{' '}
+            No elijas un pack. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-vibrant to-pink-400">
-              Servicios & Contenido
+              Construí lo que tu marca necesita.
             </span>
           </motion.h2>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-white/60 text-sm sm:text-base leading-relaxed"
+            className="text-white/60 text-sm sm:text-base leading-relaxed space-y-3"
           >
-            Seleccioná los módulos que necesita tu marca y configurá la cantidad de piezas audiovisuales por mes para obtener una estimación a medida.
-          </motion.p>
+            <p>No todas las marcas necesitan lo mismo. Por eso podés combinar nuestros servicios y definir una solución a medida según lo que quieras construir.</p>
+            <p>Elegí qué necesitás, indicá el volumen de contenido que estás buscando y obtené una estimación inicial de inversión.</p>
+          </motion.div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -109,7 +111,7 @@ export default function SemCalculator() {
             {/* 1. Selección de Servicios por Separado */}
             <div>
               <label className="block text-xs font-bold uppercase tracking-widest text-white/50 mb-3 flex items-center justify-between">
-                <span>1. Elegí tus Servicios (Por Separado)</span>
+                <span>1. Elegí tus Servicios</span>
                 <span className="text-[10px] text-brand-purple font-mono">{selectedServices.length} seleccionados</span>
               </label>
               <div className="space-y-2.5">
@@ -147,7 +149,7 @@ export default function SemCalculator() {
             <div className="pt-4 border-t border-white/10 space-y-6">
               <label className="block text-xs font-bold uppercase tracking-widest text-amber-300 flex items-center gap-2">
                 <Sliders className="w-4 h-4" />
-                <span>2. Volumen de Contenido Mensual</span>
+                <span>2. Volumen de Contenido (Opcional)</span>
               </label>
 
               {/* Slider Reels */}
@@ -171,8 +173,8 @@ export default function SemCalculator() {
                 />
                 <div className="flex justify-between text-[10px] text-white/40 mt-1 font-mono">
                   <span>0</span>
-                  <span>10 (Estándar)</span>
-                  <span>20+ (Alta Frecuencia)</span>
+                  <span>10</span>
+                  <span>20</span>
                   <span>30</span>
                 </div>
               </div>
@@ -181,7 +183,7 @@ export default function SemCalculator() {
               <div>
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-xs font-bold text-white flex items-center gap-2">
-                    <Film className="w-4 h-4 text-brand-purple" /> Videos Producidos / Cobertura
+                    <Film className="w-4 h-4 text-brand-purple" /> Videos Producidos
                   </span>
                   <span className="text-sm font-extrabold text-amber-400 bg-white/10 px-3 py-1 rounded-full font-mono">
                     {videosCount} / mes
@@ -198,8 +200,8 @@ export default function SemCalculator() {
                 />
                 <div className="flex justify-between text-[10px] text-white/40 mt-1 font-mono">
                   <span>0</span>
-                  <span>2 (Recomendado)</span>
-                  <span>5+ (Institucional)</span>
+                  <span>2</span>
+                  <span>5</span>
                   <span>10</span>
                 </div>
               </div>
@@ -208,7 +210,7 @@ export default function SemCalculator() {
               <div>
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-xs font-bold text-white flex items-center gap-2">
-                    <ImageIcon className="w-4 h-4 text-brand-purple" /> Historias (Instagram Stories)
+                    <ImageIcon className="w-4 h-4 text-brand-purple" /> Historias
                   </span>
                   <span className="text-sm font-extrabold text-amber-400 bg-white/10 px-3 py-1 rounded-full font-mono">
                     {storiesCount} / mes
@@ -225,8 +227,8 @@ export default function SemCalculator() {
                 />
                 <div className="flex justify-between text-[10px] text-white/40 mt-1 font-mono">
                   <span>0</span>
-                  <span>30 (Diaria)</span>
-                  <span>60 (Intensiva)</span>
+                  <span>30</span>
+                  <span>60</span>
                   <span>90</span>
                 </div>
               </div>
@@ -243,25 +245,11 @@ export default function SemCalculator() {
             <div>
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
                 <span className="text-xs font-bold uppercase tracking-wider text-amber-300 flex items-center gap-1.5">
-                  <Sparkles className="w-4 h-4 text-amber-400" /> Resumen de Presupuesto
-                </span>
-                <span className="text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2.5 py-1 rounded-full font-mono font-bold">
-                  Estimación en Tiempo Real
+                  <Sparkles className="w-4 h-4 text-amber-400" /> Resumen de Selección
                 </span>
               </div>
 
               <div className="space-y-6">
-                <div>
-                  <div className="text-xs text-white/50 mb-1">Inversión Mensual Estimada</div>
-                  <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                    ~${totalEstimate.toLocaleString('es-AR')}{' '}
-                    <span className="text-xs font-semibold text-brand-vibrant">ARS / mes</span>
-                  </div>
-                  <p className="text-[11px] text-white/40 mt-1">
-                    Sujeto a ajuste en auditoría estratégica gratuita según objetivos.
-                  </p>
-                </div>
-
                 {/* Scope Breakdown */}
                 <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-3">
                   <div className="text-xs font-bold text-white/90 border-b border-white/10 pb-2">
@@ -276,30 +264,29 @@ export default function SemCalculator() {
 
                     <div className="flex justify-between text-white/80">
                       <span className="text-white/60">Reels / TikToks:</span>
-                      <span className="font-bold text-white">{reelsCount} piezas/mes</span>
+                      <span className="font-bold text-white">{reelsCount} piezas</span>
                     </div>
 
                     <div className="flex justify-between text-white/80">
                       <span className="text-white/60">Videos Producidos:</span>
-                      <span className="font-bold text-white">{videosCount} producciones/mes</span>
+                      <span className="font-bold text-white">{videosCount} producciones</span>
                     </div>
 
                     <div className="flex justify-between text-white/80">
                       <span className="text-white/60">Historias:</span>
-                      <span className="font-bold text-white">{storiesCount} placas/mes</span>
+                      <span className="font-bold text-white">{storiesCount} placas</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="space-y-2 text-xs text-white/60">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Auditoría de Cuenta en 24hs Sin Cargo</span>
+                <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 space-y-2">
+                  <div className="flex items-center gap-2 text-amber-400 font-bold text-xs uppercase">
+                    <Info className="w-4 h-4" />
+                    <span>Siguiente Paso</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-brand-purple shrink-0" />
-                    <span>Reunión Táctica de Alineación por Meet</span>
-                  </div>
+                  <p className="text-[11px] text-white/70 leading-relaxed">
+                    Envianos esta configuración por WhatsApp. Evaluaremos tus objetivos y necesidades para enviarte una cotización formal y el alcance real de tu proyecto.
+                  </p>
                 </div>
               </div>
             </div>
@@ -312,11 +299,8 @@ export default function SemCalculator() {
                 className="w-full py-4 px-6 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-green-600 hover:to-emerald-500 text-white font-bold text-sm rounded-2xl flex items-center justify-center gap-2 shadow-xl shadow-green-900/40 transform hover:-translate-y-0.5 transition-all min-h-[48px]"
               >
                 <MessageCircle className="w-5 h-5 fill-current" />
-                <span>Solicitar este Presupuesto por WhatsApp</span>
+                <span>Contactar para Cotización Formal</span>
               </a>
-              <p className="text-center text-[11px] text-white/40 mt-2">
-                Sin compromiso. Respuesta garantizada en menos de 2hs.
-              </p>
             </div>
           </motion.div>
         </div>

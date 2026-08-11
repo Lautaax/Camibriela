@@ -121,46 +121,8 @@ export default function ReelsFeedPlayer() {
   );
 
   return (
-    <section id="reels-player" className="py-20 px-4 sm:px-6 md:px-12 bg-gradient-to-b from-[#08080c] via-[#0c0c14] to-[#08080c] border-t border-white/5 relative overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brand-purple/10 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-brand-vibrant/10 rounded-full blur-[140px] pointer-events-none" />
-
+    <div className="w-full relative">
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header Title */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-purple/15 border border-brand-purple/30 text-brand-purple text-xs font-bold uppercase tracking-widest mb-4"
-          >
-            <Film className="w-3.5 h-3.5 text-amber-400" />
-            <span>Showcase Interactivo Mobile</span>
-          </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight mb-4"
-          >
-            Sintió el Impacto Visual con Nuestro{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-vibrant to-amber-300">
-              Reproductor de Reels & Feed
-            </span>
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-white/60 text-sm sm:text-base leading-relaxed"
-          >
-            Explorá en tiempo real cómo lucen los contenidos, coberturas y Reels virales producidos para nuestros clientes directamente en una interfaz móvil.
-          </motion.p>
-        </div>
-
         {/* Main Interface Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
@@ -486,6 +448,6 @@ export default function ReelsFeedPlayer() {
 
         </div>
       </div>
-    </section>
+    </div>
   );
 }

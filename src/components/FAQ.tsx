@@ -1,23 +1,31 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Plus, Minus } from 'lucide-react';
+import { Plus, Minus, MessageCircleQuestion } from 'lucide-react';
 
 const faqs = [
   {
-    question: "¿Cómo empezamos a trabajar juntos?",
-    answer: "El primer paso es una charla inicial de diagnóstico (sin cargo) donde nos contás sobre tu proyecto. Si hay match, te enviamos una propuesta detallada ajustada a tus necesidades."
+    question: "¿Trabajan con marcas de cualquier rubro?",
+    answer: "No nos limitamos a un rubro, nos limitamos a una forma de trabajar. Trabajamos con marcas que entienden el valor de la comunicación, que están dispuestas a invertir tiempo en su crecimiento y que buscan un equipo que se involucre de verdad. Si compartimos esa visión, podemos trabajar juntos."
   },
   {
-    question: "¿Cuánto tiempo tardan en verse los resultados?",
-    answer: "Depende del servicio. En Ads los resultados suelen ser inmediatos, mientras que en gestión de redes y contenido orgánico la construcción de comunidad suele mostrar solidez entre el segundo y tercer mes."
+    question: "¿Hacen trabajos por única vez o solo mensuales?",
+    answer: "Hacemos ambos. Podés contratar servicios puntuales (como el desarrollo de una identidad visual, la creación de una página web o el diseño de un manual de marca) o elegir nuestros servicios mensuales (como la gestión de redes o la creación de contenido continuo). Todo depende de lo que necesites en este momento."
   },
   {
-    question: "¿Trabajan con cualquier tipo de negocio?",
-    answer: "Trabajamos con marcas que buscan elevar su comunicación digital. Tenemos experiencia en moda, gastronomía, startups tecnológicas y marca personal."
+    question: "¿Qué incluye el servicio de Gestión de Redes?",
+    answer: "Nuestra gestión no es solo publicar. Incluye el diseño de una estrategia, la creación de los copys (textos), la planificación mensual, la publicación de los posteos e historias, la moderación básica y el análisis de resultados."
   },
   {
-    question: "¿Incluyen la toma de fotos y videos?",
-    answer: "Sí, contamos con equipo de producción audiovisual propio para generar contenido original y de alta calidad para nuestras marcas aliadas."
+    question: "¿Ustedes se encargan de filmar y sacar fotos?",
+    answer: "Sí. Tenemos un equipo de producción audiovisual que se encarga de crear todo el contenido necesario para tus redes o tu web. Desde reels dinámicos hasta producciones más institucionales, pensamos la idea, la producimos y la editamos."
+  },
+  {
+    question: "¿Hacen publicidad paga (Ads)?",
+    answer: "Sí. Gestionamos campañas publicitarias en Meta Ads (Instagram y Facebook) y Google Ads. No hacemos pauta por hacer: la pensamos dentro de una estrategia más grande para que tu inversión tenga sentido y genere resultados reales, ya sea vender más o llegar a más personas."
+  },
+  {
+    question: "¿Tengo que tener mi marca ya definida para trabajar con ustedes?",
+    answer: "No, para nada. Si sentís que tu marca necesita un cambio desde la base, tenemos un servicio de Identidad de Marca (Branding) donde trabajamos en el logo, la paleta de colores, las tipografías y el estilo visual para que todo lo que comuniques después tenga coherencia."
   }
 ];
 
@@ -25,9 +33,21 @@ export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 px-6 relative">
-      <div className="max-w-3xl mx-auto">
+    <section className="py-24 px-6 relative bg-black/50 border-t border-white/5">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-purple/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-3xl mx-auto relative z-10">
         <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/80 text-xs font-bold uppercase tracking-widest mb-6"
+          >
+            <MessageCircleQuestion className="w-4 h-4 text-brand-purple" />
+            <span>Respuestas Rápidas</span>
+          </motion.div>
+          
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
