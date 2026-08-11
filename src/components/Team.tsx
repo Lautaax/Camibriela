@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Target, Film, Users, Megaphone, Palette, ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Target, Film, Users, Megaphone, Palette, ShieldCheck, ArrowRight, CheckCircle2, LayoutTemplate } from 'lucide-react';
 
 const roles = [
   {
@@ -46,6 +46,15 @@ const roles = [
     responsibilities: ["Sistemas visuales y Brand Books", "Templates editables para historias/feed", "Diseño de merchandising y papelería"],
     gradient: "from-emerald-500/10 via-teal-500/20 to-transparent",
     border: "border-emerald-500/30"
+  },
+  {
+    icon: LayoutTemplate,
+    roleTitle: "Diseño & Desarrollo Web",
+    badge: "Sitios & E-commerce",
+    description: "Creación de sitios web atractivos, rápidos y orientados a la conversión para maximizar ventas y ofrecer una excelente experiencia de usuario.",
+    responsibilities: ["Diseño de interfaces UX/UI", "Desarrollo de páginas web y tiendas", "Optimización de rendimiento (SEO)"],
+    gradient: "from-sky-500/10 via-blue-500/20 to-transparent",
+    border: "border-sky-500/30"
   },
   {
     icon: ShieldCheck,
